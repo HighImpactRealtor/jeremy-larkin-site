@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeremy Larkin — Win in business. Without losing at home.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F2EBDD;
+    --cream-deep: #E8DFCB;
+    --sage-deep: #2D3D33;       /* primary dark — was forest */
+    --sage: #4A5D4F;            /* mid sage for hovers, soft surfaces */
+    --sage-light: #7A8A7C;      /* lighter sage for subtle accents */
+    --ochre: #C9A04A;           /* primary accent — was terracotta, now richer gold */
+    --ochre-deep: #A07D33;
+    --ochre-soft: #E0BE7C;
+    --ink: #221E18;
+    --ink-soft: #4A4239;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 19px;
+    line-height: 1.65;
+    font-weight: 380;
+    overflow-x: hidden;
+    background-image:
+      radial-gradient(ellipse at top left, rgba(201,160,74,0.04), transparent 60%),
+      radial-gradient(ellipse at bottom right, rgba(45,61,51,0.03), transparent 50%);
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.35;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.13 0 0 0 0 0.11 0 0 0 0 0.09 0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    mix-blend-mode: multiply;
+  }
+
+  /* ---------- NAV ---------- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(242,235,221,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(34,30,24,0.08);
+  }
+  nav .brand {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 19px;
+    letter-spacing: 0.01em;
+    color: var(--sage-deep);
+  }
+  nav .brand em {
+    font-style: italic;
+    color: var(--ochre);
+    font-weight: 400;
+  }
+  nav .links {
+    display: flex;
+    gap: 36px;
+    align-items: center;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  nav .links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  nav .links a:hover { color: var(--ochre); }
+  nav .cta-link {
+    border: 1px solid var(--sage-deep);
+    padding: 10px 18px;
+    border-radius: 999px;
+    color: var(--sage-deep) !important;
+    transition: all 0.2s;
+  }
+  nav .cta-link:hover {
+    background: var(--sage-deep);
+    color: var(--cream) !important;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    min-height: 100vh;
+    padding: 160px 48px 100px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero .eyebrow {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ochre);
+    font-size: 17px;
+    letter-spacing: 0.04em;
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .hero .eyebrow::before {
+    content: "";
+    width: 36px; height: 1px;
+    background: var(--ochre);
+  }
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 360;
+    font-size: clamp(44px, 5.4vw, 78px);
+    line-height: 1.04;
+    letter-spacing: -0.02em;
+    color: var(--sage-deep);
+    margin-bottom: 28px;
+    font-variation-settings: "SOFT" 80, "opsz" 144;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--ochre);
+    font-weight: 380;
+  }
+  .hero .promise {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    line-height: 1.45;
+    color: var(--sage-deep);
+    margin-bottom: 24px;
+    max-width: 560px;
+    font-weight: 380;
+  }
+  .hero .promise strong {
+    color: var(--ochre);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .hero .sub {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 520px;
+    margin-bottom: 44px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 32px;
+    background: var(--sage-deep);
+    color: var(--cream);
+    text-decoration: none;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    border-radius: 999px;
+    transition: all 0.25s;
+    border: 1px solid var(--sage-deep);
+  }
+  .btn-primary:hover {
+    background: var(--ochre);
+    border-color: var(--ochre);
+    transform: translateY(-2px);
+  }
+  .btn-primary .arrow { transition: transform 0.25s; }
+  .btn-primary:hover .arrow { transform: translateX(4px); }
+
+  .hero-portrait {
+    aspect-ratio: 4/5;
+    background: linear-gradient(135deg, var(--cream-deep) 0%, var(--sage) 100%);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    box-shadow:
+      0 30px 80px rgba(45,61,51,0.18),
+      0 1px 0 rgba(255,255,255,0.4) inset;
+  }
+  .hero-portrait::after {
+    content: "[ portrait ]";
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    font-size: 14px;
+  }
+  .hero-portrait .badge {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    background: var(--cream);
+    padding: 12px 18px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--sage-deep);
+    border-radius: 2px;
+    transform: rotate(-2deg);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  }
+
+  /* ---------- CREDIBILITY STRIP ---------- */
+  .strip {
+    border-top: 1px solid rgba(34,30,24,0.12);
+    border-bottom: 1px solid rgba(34,30,24,0.12);
+    padding: 32px 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 56px;
+    flex-wrap: wrap;
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    position: relative;
+    z-index: 2;
+  }
+  .strip span { display: flex; align-items: center; gap: 10px; }
+  .strip .num {
+    font-size: 22px;
+    font-style: italic;
+    color: var(--ochre);
+    text-transform: none;
+    letter-spacing: 0;
+  }
+  .strip .dot { width: 4px; height: 4px; background: var(--ink-soft); border-radius: 50%; opacity: 0.4; }
+
+  /* ---------- DIAGNOSIS ---------- */
+  .diagnosis {
+    background: var(--sage-deep);
+    color: var(--cream);
+    padding: 140px 48px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .diagnosis::before {
+    content: "";
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(201,160,74,0.18), transparent 70%);
+    pointer-events: none;
+  }
+  .diagnosis-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .section-label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ochre);
+    font-size: 16px;
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+  }
+  .diagnosis .section-label { color: var(--ochre); }
+  .diagnosis h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 320;
+    font-size: clamp(40px, 4.4vw, 64px);
+    line-height: 1.08;
+    color: var(--cream);
+    letter-spacing: -0.018em;
+    margin-bottom: 24px;
+    max-width: 900px;
+    font-variation-settings: "SOFT" 100, "opsz" 144;
+  }
+  .diagnosis h2 em { font-style: italic; color: var(--ochre); }
+  .diagnosis .lede {
+    font-size: 21px;
+    line-height: 1.55;
+    color: rgba(242,235,221,0.78);
+    max-width: 720px;
+    margin-bottom: 80px;
+  }
+  .diagnosis .lede strong {
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  .truths {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: rgba(242,235,221,0.1);
+    border-top: 1px solid rgba(242,235,221,0.18);
+    border-left: 1px solid rgba(242,235,221,0.18);
+  }
+  .truth {
+    background: var(--sage-deep);
+    padding: 44px 40px;
+    border-right: 1px solid rgba(242,235,221,0.18);
+    border-bottom: 1px solid rgba(242,235,221,0.18);
+    transition: background 0.3s;
+  }
+  .truth:hover { background: var(--sage); }
+  .truth .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ochre);
+    margin-bottom: 18px;
+    display: block;
+  }
+  .truth h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 380;
+    font-size: 24px;
+    line-height: 1.25;
+    color: var(--cream);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .truth p {
+    font-size: 17px;
+    line-height: 1.55;
+    color: rgba(242,235,221,0.7);
+  }
+
+  .ica-note {
+    margin-top: 48px;
+    padding: 20px 24px;
+    background: rgba(201,169,97,0.08);
+    border-left: 2px solid var(--ochre);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: rgba(242,235,221,0.65);
+    max-width: 700px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about {
+    padding: 140px 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+    z-index: 2;
+  }
+  .about h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 350;
+    font-size: clamp(36px, 3.6vw, 52px);
+    line-height: 1.1;
+    color: var(--sage-deep);
+    letter-spacing: -0.015em;
+    font-variation-settings: "SOFT" 90, "opsz" 144;
+  }
+  .about h2 em { font-style: italic; color: var(--ochre); }
+
+  .about-body {
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--ink);
+  }
+  .about-body p { margin-bottom: 24px; }
+  .about-body p:first-child::first-letter {
+    font-family: 'Fraunces', serif;
+    font-size: 64px;
+    float: left;
+    line-height: 0.9;
+    margin: 6px 12px 0 0;
+    color: var(--ochre);
+    font-weight: 400;
+  }
+  .about-body .pullquote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 26px;
+    line-height: 1.35;
+    color: var(--sage-deep);
+    border-left: 2px solid var(--ochre);
+    padding: 4px 0 4px 28px;
+    margin: 36px 0;
+  }
+  .signoff {
+    margin-top: 40px;
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+  .signoff .name {
+    font-style: italic;
+    font-size: 28px;
+    color: var(--sage-deep);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* ---------- THE PATH ---------- */
+  .path {
+    padding: 140px 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .path-header { max-width: 800px; margin-bottom: 80px; }
+  .path h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 350;
+    font-size: clamp(40px, 4.4vw, 60px);
+    line-height: 1.08;
+    color: var(--sage-deep);
+    letter-spacing: -0.018em;
+    font-variation-settings: "SOFT" 90, "opsz" 144;
+  }
+  .path h2 em { font-style: italic; color: var(--ochre); }
+  .path .lede {
+    margin-top: 22px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    max-width: 640px;
+  }
+
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(34,30,24,0.18);
+  }
+  .pillar {
+    padding: 56px 36px 56px 0;
+    border-bottom: 1px solid rgba(34,30,24,0.18);
+    position: relative;
+  }
+  .pillar:not(:last-child) {
+    border-right: 1px solid rgba(34,30,24,0.18);
+    padding-right: 36px;
+  }
+  .pillar:not(:first-child) { padding-left: 36px; }
+  .pillar .roman {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 80px;
+    line-height: 1;
+    color: var(--ochre);
+    font-weight: 300;
+    opacity: 0.85;
+    margin-bottom: 24px;
+    font-variation-settings: "SOFT" 100;
+  }
+  .pillar .outcome {
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .pillar h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 30px;
+    color: var(--sage-deep);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .pillar p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- SUBSTACK ---------- */
+  .substack {
+    padding: 140px 48px;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+  .substack-card {
+    background: var(--cream-deep);
+    border: 1px solid rgba(34,30,24,0.12);
+    border-radius: 6px;
+    padding: 72px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 72px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .substack-card::before {
+    content: "✺";
+    position: absolute;
+    top: 32px; right: 36px;
+    font-size: 32px;
+    color: var(--ochre);
+    opacity: 0.45;
+  }
+  .substack-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 360;
+    font-size: clamp(32px, 3vw, 44px);
+    line-height: 1.1;
+    color: var(--sage-deep);
+    letter-spacing: -0.015em;
+    margin-bottom: 16px;
+    font-variation-settings: "SOFT" 90, "opsz" 144;
+  }
+  .substack-card h3 em { font-style: italic; color: var(--ochre); }
+  .substack-card p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+  }
+  .substack-meta {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-top: 24px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .substack-meta .pill {
+    background: var(--cream);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-style: normal;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--sage-deep);
+    border: 1px solid rgba(34,30,24,0.12);
+  }
+  .substack-posts {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .post {
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(34,30,24,0.12);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: padding 0.2s;
+  }
+  .post:hover { padding-left: 8px; }
+  .post .date {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ochre);
+    margin-bottom: 4px;
+  }
+  .post .title {
+    font-family: 'Fraunces', serif;
+    font-size: 19px;
+    color: var(--sage-deep);
+    line-height: 1.3;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 24px;
+    background: transparent;
+    color: var(--sage-deep);
+    text-decoration: none;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    border: 1px solid var(--sage-deep);
+    border-radius: 999px;
+    transition: all 0.2s;
+  }
+  .btn-secondary:hover {
+    background: var(--sage-deep);
+    color: var(--cream);
+  }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta {
+    padding: 160px 48px;
+    text-align: center;
+    background: var(--cream-deep);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+  .final-cta::before, .final-cta::after {
+    content: "";
+    position: absolute;
+    width: 360px; height: 360px;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .final-cta::before {
+    top: -120px; left: -120px;
+    background: radial-gradient(circle, rgba(201,160,74,0.12), transparent 70%);
+  }
+  .final-cta::after {
+    bottom: -120px; right: -120px;
+    background: radial-gradient(circle, rgba(45,61,51,0.08), transparent 70%);
+  }
+  .final-cta-inner { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+  .final-cta .section-label { display: inline-block; }
+  .final-cta h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 340;
+    font-size: clamp(44px, 5vw, 72px);
+    line-height: 1.05;
+    color: var(--sage-deep);
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    font-variation-settings: "SOFT" 100, "opsz" 144;
+  }
+  .final-cta h2 em { font-style: italic; color: var(--ochre); }
+  .final-cta p {
+    font-size: 20px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-bottom: 14px;
+  }
+  .final-cta .fit-note {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin-top: 28px;
+    margin-bottom: 0;
+    opacity: 0.85;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 56px 48px 40px;
+    background: var(--sage-deep);
+    color: rgba(242,235,221,0.7);
+    position: relative;
+    z-index: 2;
+  }
+  .footer-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  footer .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--cream);
+  }
+  footer .brand em { font-style: italic; color: var(--ochre); }
+  footer .links { display: flex; gap: 28px; font-size: 14px; }
+  footer .links a {
+    color: rgba(242,235,221,0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  footer .links a:hover { color: var(--ochre); }
+  footer .copyright {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(242,235,221,0.15);
+    text-align: center;
+    font-size: 13px;
+    color: rgba(242,235,221,0.5);
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ---------- ENTRANCE ANIMATION ---------- */
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero .eyebrow { animation: rise 0.8s 0.1s both; }
+  .hero h1 { animation: rise 0.9s 0.25s both; }
+  .hero .promise { animation: rise 0.9s 0.4s both; }
+  .hero .sub { animation: rise 0.9s 0.55s both; }
+  .hero .btn-primary { animation: rise 0.9s 0.7s both; }
+  .hero-portrait { animation: rise 1s 0.4s both; }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 900px) {
+    nav { padding: 18px 22px; }
+    nav .links { gap: 18px; font-size: 12px; }
+    nav .links a:not(.cta-link) { display: none; }
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 120px 22px 80px;
+      gap: 48px;
+    }
+    .strip { padding: 24px 22px; gap: 18px; font-size: 12px; }
+    .strip .dot { display: none; }
+    .about, .path, .substack { padding: 90px 22px; }
+    .about, .substack-card { grid-template-columns: 1fr; gap: 44px; }
+    .substack-card { padding: 40px 28px; }
+    .diagnosis { padding: 90px 22px; }
+    .truths { grid-template-columns: 1fr; }
+    .pillars { grid-template-columns: 1fr; }
+    .pillar { padding: 44px 0 !important; border-right: none !important; }
+    .final-cta { padding: 100px 22px; }
+    footer { padding: 40px 22px 30px; }
+    .footer-inner { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">Jeremy Larkin <em>·</em> @HighImpactRealtor</div>
+  <div class="links">
+    <a href="#diagnosis">The Problem</a>
+    <a href="#about">About</a>
+    <a href="#path">The Path</a>
+    <a href="#substack">Substack</a>
+    <a href="https://tinyurl.com/yjm3dtz7" class="cta-link">Explore Working Together</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">Made for More</div>
+    <h1>
+      Win in business.
+      <em>Without losing at home.</em>
+    </h1>
+    <p class="promise">
+      I help high-producing realtors grow their income, end the chaos, and <strong>get their life back.</strong>
+    </p>
+    <p class="sub">
+      You've already proven you can produce. The question isn't whether you can sell more houses.
+      It's whether the version of this business you're building is the one you actually want.
+    </p>
+    <a href="https://tinyurl.com/yjm3dtz7" class="btn-primary">
+      Explore Working Together
+      <span class="arrow">→</span>
+    </a>
+  </div>
+  <div class="hero-portrait">
+    <div class="badge">St. George, UT · 21 yrs in</div>
+  </div>
+</section>
+
+<!-- CREDIBILITY STRIP -->
+<div class="strip">
+  <span><span class="num">21</span> Years in the Business</span>
+  <span class="dot"></span>
+  <span><span class="num">2,200+</span> Transactions</span>
+  <span class="dot"></span>
+  <span>Top 1% Nationally</span>
+  <span class="dot"></span>
+  <span>Founder · The Larkin Group</span>
+</div>
+
+<!-- DIAGNOSIS -->
+<section class="diagnosis" id="diagnosis">
+  <div class="diagnosis-inner">
+    <div class="section-label">— The Diagnosis</div>
+    <h2>You've been told you have to pick two. <em>That's the lie.</em></h2>
+    <p class="lede">
+      The industry's playbook is simple: if you want more income, grind more hours.
+      The wellness world says the opposite: protect your peace, don't worry about the money.
+      Both camps are wrong. <strong>You can have all three — more income, less chaos, more time —
+      but not on the model you're running.</strong> Here's what's actually breaking, in the words
+      of the agents I'm sitting down with every week.
+    </p>
+
+    <div class="truths">
+      <div class="truth">
+        <span class="num">01</span>
+        <h3>You're producing more and keeping less.</h3>
+        <p>
+          More closings, more overhead, more chaos — and somehow your take-home isn't moving the way it should.
+          That's not a sales problem. That's a model problem.
+        </p>
+      </div>
+      <div class="truth">
+        <span class="num">02</span>
+        <h3>If you stop, the income stops.</h3>
+        <p>
+          That's not a business. That's a really expensive job. And it doesn't matter how many deals
+          you close — you don't actually own anything until that's no longer true.
+        </p>
+      </div>
+      <div class="truth">
+        <span class="num">03</span>
+        <h3>The wins at work are funded by losses at home.</h3>
+        <p>
+          Every breakthrough quarter has a quiet receipt no one's adding up — missed dinners,
+          short tempers, a marriage running on fumes, kids who've stopped asking when you'll be there.
+        </p>
+      </div>
+      <div class="truth">
+        <span class="num">04</span>
+        <h3>Your health is the line item you keep deferring.</h3>
+        <p>
+          The gym, the sleep, the stress, the body — all of it on the back burner until "after this next deal."
+          There is no "after." There's only what you're building habits to deserve.
+        </p>
+      </div>
+      <div class="truth">
+        <span class="num">05</span>
+        <h3>"More leads" is the wrong prescription.</h3>
+        <p>
+          You don't need more leads. You're sitting on a database of people who already trust you,
+          and you're ignoring it because you're too busy chasing strangers.
+        </p>
+      </div>
+      <div class="truth">
+        <span class="num">06</span>
+        <h3>You already know. That's the hardest part.</h3>
+        <p>
+          Most of you reading this have known for a while. The information isn't the gap.
+          The structure to actually act on it is.
+        </p>
+      </div>
+    </div>
+
+    <div class="ica-note">
+      Note: this section keeps growing. I'm interviewing producing agents across the country every week —
+      if you're seeing a pattern I'm missing, I want to hear it.
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-meta">
+    <div class="section-label">— About</div>
+    <h2>I scaled past 100 deals and got my life back. <em>I know because I had to lose both first.</em></h2>
+  </div>
+  <div class="about-body">
+    <p>
+      Last year I personally sold 25 homes, ran a team, got married, skied 25 days, and rode my
+      mountain bike on random Tuesday afternoons. None of that was an accident — and none of
+      it would've been possible the way I used to run this thing.
+    </p>
+    <p>
+      Twenty-one years ago I sold my first house in St. George. I've sold over 2,200 since.
+      Scaled from 33 deals a year to 46, then broke 100. Became known as the voice of St. George real estate.
+      Built a team. Got the awards. Did the thing.
+    </p>
+    <p>
+      And during the highest-producing stretch of my career, my entire personal life melted down in front of me.
+      My marriage ended. My assistant slept at her desk one night because I couldn't stop pushing.
+      I sat on my business partner Jesse's floor and cried — more than once.
+    </p>
+    <div class="pullquote">
+      "I'd built the most successful version of the wrong thing.
+      It wasn't a business. It was a really expensive job."
+    </div>
+    <p>
+      Here's the part I don't skip: the work I'd already done as an operator — the systems,
+      the rhythms, the architecture under the production — is what carried me through. If I hadn't
+      built it that way, we would've gone bankrupt while I fell apart. The business held me up
+      when I couldn't hold it up.
+    </p>
+    <p>
+      I rebuilt — the production AND the life. Married Jen in August 2025, both of us stronger
+      for what we walked through. Four kids, ages 19 to 26. A three-legged lab named Max.
+      A business that funds the life now, instead of fighting it.
+    </p>
+    <p>
+      That's what I help other high-producing agents build. Not because I read it in a book.
+      Because I've been the version of you who was winning and quietly losing — and I'm not interested
+      in pretending the first one was sustainable.
+    </p>
+    <div class="signoff">
+      With you,
+      <span class="name">Jeremy</span>
+    </div>
+  </div>
+</section>
+
+<!-- THE PATH -->
+<section class="path" id="path">
+  <div class="path-header">
+    <div class="section-label">— The Path</div>
+    <h2>Three moves. <em>One business that actually works.</em></h2>
+    <p class="lede">
+      Everything I teach lives in three movements. Each one solves one of the three things
+      you actually came here for. Skip any of them and the model collapses.
+    </p>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar">
+      <div class="roman">I.</div>
+      <div class="outcome">More Income</div>
+      <h3>Break the Ceiling</h3>
+      <p>
+        Find the income you're already leaving on the table — in your database, your sphere,
+        your pricing, your conversion. Most agents don't have a lead problem. They have a
+        leverage problem. We fix that first.
+      </p>
+    </div>
+    <div class="pillar">
+      <div class="roman">II.</div>
+      <div class="outcome">Less Chaos</div>
+      <h3>Build the Architecture</h3>
+      <p>
+        Replace hustle with structure. Predictable lead flow, real follow-up, rhythms you don't
+        have to white-knuckle. The business runs on a system, not on adrenaline — so it doesn't
+        break every time you take a weekend off.
+      </p>
+    </div>
+    <div class="pillar">
+      <div class="roman">III.</div>
+      <div class="outcome">More Time</div>
+      <h3>Reclaim Your Life</h3>
+      <p>
+        Get your dinners back. Your health back. Your weekends, your marriage, your hobbies.
+        A business that funds the rest of your life instead of competing with it. This is the
+        whole point — not a bonus round.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSTACK -->
+<section class="substack" id="substack">
+  <div class="substack-card">
+    <div>
+      <div class="section-label">— The Dispatch</div>
+      <h3>Real-talk notes from <em>21 years in the trenches.</em></h3>
+      <p>
+        A weekly Substack for the agents who are tired of motivational fluff and want
+        the actual mechanics of building a business that funds a life. No hype. No gurus.
+        Just what's working — and what's breaking — for real producers, written from St. George.
+      </p>
+      <a href="https://highimpactrealtor.substack.com" class="btn-secondary">
+        Read on Substack →
+      </a>
+      <div class="substack-meta">
+        <span class="pill">Weekly</span>
+        <span>Free to read · No spam, ever</span>
+      </div>
+    </div>
+    <div class="substack-posts">
+      <a href="https://highimpactrealtor.substack.com" class="post">
+        <div class="date">Latest</div>
+        <div class="title">[ Pulls latest post title via Substack ]</div>
+      </a>
+      <a href="https://highimpactrealtor.substack.com" class="post">
+        <div class="date">Last week</div>
+        <div class="title">[ Pulls previous post title ]</div>
+      </a>
+      <a href="https://highimpactrealtor.substack.com" class="post">
+        <div class="date">Two weeks ago</div>
+        <div class="title">[ Pulls previous post title ]</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="final-cta-inner">
+    <div class="section-label">— What's Next</div>
+    <h2>You weren't built to grind forever. <em>You were made for more.</em></h2>
+    <p>
+      A 30-minute conversation. No pitch deck, no pressure. We figure out together
+      whether the work I do is the right fit — and if it isn't, I'll tell you what is.
+    </p>
+    <a href="https://tinyurl.com/yjm3dtz7" class="btn-primary">
+      Explore Working Together
+      <span class="arrow">→</span>
+    </a>
+    <p class="fit-note">
+      My programs are built for agents closing 20+ transactions annually. If you're not quite there yet,
+      stay connected — the right time will come.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="brand">Jeremy Larkin <em>·</em> The Larkin Group</div>
+    <div class="links">
+      <a href="#diagnosis">The Problem</a>
+      <a href="#about">About</a>
+      <a href="#path">The Path</a>
+      <a href="#substack">Substack</a>
+      <a href="https://tinyurl.com/yjm3dtz7">Book a Call</a>
+    </div>
+  </div>
+  <div class="copyright">© 2026 The Larkin Group · St. George, Utah · Made for More</div>
+</footer>
+
+</body>
+</html>
