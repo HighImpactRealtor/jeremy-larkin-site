@@ -11,10 +11,10 @@
   :root {
     --cream: #F2EBDD;
     --cream-deep: #E8DFCB;
-    --sage-deep: #2D3D33;       /* primary dark — was forest */
-    --sage: #4A5D4F;            /* mid sage for hovers, soft surfaces */
-    --sage-light: #7A8A7C;      /* lighter sage for subtle accents */
-    --ochre: #C9A04A;           /* primary accent — was terracotta, now richer gold */
+    --sage-deep: #2D3D33;
+    --sage: #4A5D4F;
+    --sage-light: #7A8A7C;
+    --ochre: #C9A04A;
     --ochre-deep: #A07D33;
     --ochre-soft: #E0BE7C;
     --ink: #221E18;
@@ -48,10 +48,11 @@
     mix-blend-mode: multiply;
   }
 
-  /* ---------- NAV ---------- */
   nav {
     position: fixed;
-    top: 0; left: 0; right: 0;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     padding: 22px 48px;
     display: flex;
@@ -62,6 +63,7 @@
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(34,30,24,0.08);
   }
+
   nav .brand {
     font-family: 'Fraunces', serif;
     font-weight: 500;
@@ -69,11 +71,13 @@
     letter-spacing: 0.01em;
     color: var(--sage-deep);
   }
+
   nav .brand em {
     font-style: italic;
     color: var(--ochre);
     font-weight: 400;
   }
+
   nav .links {
     display: flex;
     gap: 36px;
@@ -82,12 +86,15 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
   }
+
   nav .links a {
     color: var(--ink-soft);
     text-decoration: none;
     transition: color 0.2s;
   }
+
   nav .links a:hover { color: var(--ochre); }
+
   nav .cta-link {
     border: 1px solid var(--sage-deep);
     padding: 10px 18px;
@@ -95,12 +102,12 @@
     color: var(--sage-deep) !important;
     transition: all 0.2s;
   }
+
   nav .cta-link:hover {
     background: var(--sage-deep);
     color: var(--cream) !important;
   }
 
-  /* ---------- HERO ---------- */
   .hero {
     min-height: 100vh;
     padding: 160px 48px 100px;
@@ -111,6 +118,7 @@
     position: relative;
     z-index: 2;
   }
+
   .hero .eyebrow {
     font-family: 'Fraunces', serif;
     font-style: italic;
@@ -123,11 +131,14 @@
     align-items: center;
     gap: 14px;
   }
+
   .hero .eyebrow::before {
     content: "";
-    width: 36px; height: 1px;
+    width: 36px;
+    height: 1px;
     background: var(--ochre);
   }
+
   .hero h1 {
     font-family: 'Fraunces', serif;
     font-weight: 360;
@@ -138,11 +149,13 @@
     margin-bottom: 28px;
     font-variation-settings: "SOFT" 80, "opsz" 144;
   }
+
   .hero h1 em {
     font-style: italic;
     color: var(--ochre);
     font-weight: 380;
   }
+
   .hero .promise {
     font-family: 'Fraunces', serif;
     font-size: 22px;
@@ -152,11 +165,13 @@
     max-width: 560px;
     font-weight: 380;
   }
+
   .hero .promise strong {
     color: var(--ochre);
     font-style: italic;
     font-weight: 400;
   }
+
   .hero .sub {
     font-size: 19px;
     line-height: 1.55;
@@ -181,38 +196,47 @@
     transition: all 0.25s;
     border: 1px solid var(--sage-deep);
   }
+
   .btn-primary:hover {
     background: var(--ochre);
     border-color: var(--ochre);
     transform: translateY(-2px);
   }
+
   .btn-primary .arrow { transition: transform 0.25s; }
   .btn-primary:hover .arrow { transform: translateX(4px); }
 
   .hero-portrait {
-    aspect-ratio: 4/5;
-    background: linear-gradient(135deg, var(--cream-deep) 0%, var(--sage) 100%);
+    aspect-ratio: 4 / 5;
     border-radius: 4px;
     position: relative;
     overflow: hidden;
     box-shadow:
       0 30px 80px rgba(45,61,51,0.18),
       0 1px 0 rgba(255,255,255,0.4) inset;
+    background: linear-gradient(135deg, var(--cream-deep) 0%, var(--sage) 100%);
   }
-  .hero-portrait::after {
-    content: "[ portrait ]";
+
+  .hero-portrait::before {
+    content: "";
     position: absolute;
     inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(255,255,255,0.6);
-    font-style: italic;
-    font-size: 14px;
+    background: linear-gradient(to top, rgba(34,30,24,0.28), transparent 36%);
+    z-index: 1;
+    pointer-events: none;
   }
+
+  .hero-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
   .hero-portrait .badge {
     position: absolute;
-    bottom: 24px; left: 24px;
+    bottom: 24px;
+    left: 24px;
     background: var(--cream);
     padding: 12px 18px;
     font-family: 'Fraunces', serif;
@@ -222,9 +246,9 @@
     border-radius: 2px;
     transform: rotate(-2deg);
     box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    z-index: 2;
   }
 
-  /* ---------- CREDIBILITY STRIP ---------- */
   .strip {
     border-top: 1px solid rgba(34,30,24,0.12);
     border-bottom: 1px solid rgba(34,30,24,0.12);
@@ -242,6 +266,7 @@
     position: relative;
     z-index: 2;
   }
+
   .strip span { display: flex; align-items: center; gap: 10px; }
   .strip .num {
     font-size: 22px;
@@ -250,9 +275,15 @@
     text-transform: none;
     letter-spacing: 0;
   }
-  .strip .dot { width: 4px; height: 4px; background: var(--ink-soft); border-radius: 50%; opacity: 0.4; }
 
-  /* ---------- DIAGNOSIS ---------- */
+  .strip .dot {
+    width: 4px;
+    height: 4px;
+    background: var(--ink-soft);
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+
   .diagnosis {
     background: var(--sage-deep);
     color: var(--cream);
@@ -261,19 +292,24 @@
     z-index: 2;
     overflow: hidden;
   }
+
   .diagnosis::before {
     content: "";
     position: absolute;
-    top: -80px; right: -80px;
-    width: 400px; height: 400px;
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
     background: radial-gradient(circle, rgba(201,160,74,0.18), transparent 70%);
     pointer-events: none;
   }
+
   .diagnosis-inner {
     max-width: 1100px;
     margin: 0 auto;
     position: relative;
   }
+
   .section-label {
     font-family: 'Fraunces', serif;
     font-style: italic;
@@ -282,7 +318,9 @@
     letter-spacing: 0.04em;
     margin-bottom: 18px;
   }
+
   .diagnosis .section-label { color: var(--ochre); }
+
   .diagnosis h2 {
     font-family: 'Fraunces', serif;
     font-weight: 320;
@@ -294,7 +332,9 @@
     max-width: 900px;
     font-variation-settings: "SOFT" 100, "opsz" 144;
   }
+
   .diagnosis h2 em { font-style: italic; color: var(--ochre); }
+
   .diagnosis .lede {
     font-size: 21px;
     line-height: 1.55;
@@ -302,6 +342,7 @@
     max-width: 720px;
     margin-bottom: 80px;
   }
+
   .diagnosis .lede strong {
     color: var(--cream);
     font-weight: 500;
@@ -315,6 +356,7 @@
     border-top: 1px solid rgba(242,235,221,0.18);
     border-left: 1px solid rgba(242,235,221,0.18);
   }
+
   .truth {
     background: var(--sage-deep);
     padding: 44px 40px;
@@ -322,7 +364,9 @@
     border-bottom: 1px solid rgba(242,235,221,0.18);
     transition: background 0.3s;
   }
+
   .truth:hover { background: var(--sage); }
+
   .truth .num {
     font-family: 'Fraunces', serif;
     font-style: italic;
@@ -331,6 +375,7 @@
     margin-bottom: 18px;
     display: block;
   }
+
   .truth h3 {
     font-family: 'Fraunces', serif;
     font-weight: 380;
@@ -340,6 +385,7 @@
     margin-bottom: 14px;
     letter-spacing: -0.01em;
   }
+
   .truth p {
     font-size: 17px;
     line-height: 1.55;
@@ -358,7 +404,6 @@
     max-width: 700px;
   }
 
-  /* ---------- ABOUT ---------- */
   .about {
     padding: 140px 48px;
     max-width: 1280px;
@@ -370,6 +415,7 @@
     position: relative;
     z-index: 2;
   }
+
   .about h2 {
     font-family: 'Fraunces', serif;
     font-weight: 350;
@@ -379,6 +425,7 @@
     letter-spacing: -0.015em;
     font-variation-settings: "SOFT" 90, "opsz" 144;
   }
+
   .about h2 em { font-style: italic; color: var(--ochre); }
 
   .about-body {
@@ -386,7 +433,9 @@
     line-height: 1.7;
     color: var(--ink);
   }
+
   .about-body p { margin-bottom: 24px; }
+
   .about-body p:first-child::first-letter {
     font-family: 'Fraunces', serif;
     font-size: 64px;
@@ -396,6 +445,7 @@
     color: var(--ochre);
     font-weight: 400;
   }
+
   .about-body .pullquote {
     font-family: 'Fraunces', serif;
     font-style: italic;
@@ -406,12 +456,14 @@
     padding: 4px 0 4px 28px;
     margin: 36px 0;
   }
+
   .signoff {
     margin-top: 40px;
     font-family: 'Fraunces', serif;
     font-size: 18px;
     color: var(--ink-soft);
   }
+
   .signoff .name {
     font-style: italic;
     font-size: 28px;
@@ -420,7 +472,6 @@
     margin-bottom: 4px;
   }
 
-  /* ---------- THE PATH ---------- */
   .path {
     padding: 140px 48px;
     max-width: 1280px;
@@ -428,7 +479,9 @@
     position: relative;
     z-index: 2;
   }
+
   .path-header { max-width: 800px; margin-bottom: 80px; }
+
   .path h2 {
     font-family: 'Fraunces', serif;
     font-weight: 350;
@@ -438,7 +491,9 @@
     letter-spacing: -0.018em;
     font-variation-settings: "SOFT" 90, "opsz" 144;
   }
+
   .path h2 em { font-style: italic; color: var(--ochre); }
+
   .path .lede {
     margin-top: 22px;
     font-size: 20px;
@@ -453,16 +508,20 @@
     gap: 0;
     border-top: 1px solid rgba(34,30,24,0.18);
   }
+
   .pillar {
     padding: 56px 36px 56px 0;
     border-bottom: 1px solid rgba(34,30,24,0.18);
     position: relative;
   }
+
   .pillar:not(:last-child) {
     border-right: 1px solid rgba(34,30,24,0.18);
     padding-right: 36px;
   }
+
   .pillar:not(:first-child) { padding-left: 36px; }
+
   .pillar .roman {
     font-family: 'Fraunces', serif;
     font-style: italic;
@@ -474,6 +533,7 @@
     margin-bottom: 24px;
     font-variation-settings: "SOFT" 100;
   }
+
   .pillar .outcome {
     font-family: 'Newsreader', serif;
     font-style: italic;
@@ -483,6 +543,7 @@
     color: var(--ink-soft);
     margin-bottom: 8px;
   }
+
   .pillar h3 {
     font-family: 'Fraunces', serif;
     font-weight: 400;
@@ -491,13 +552,13 @@
     margin-bottom: 14px;
     letter-spacing: -0.01em;
   }
+
   .pillar p {
     font-size: 17px;
     line-height: 1.6;
     color: var(--ink-soft);
   }
 
-  /* ---------- SUBSTACK ---------- */
   .substack {
     padding: 140px 48px;
     max-width: 1280px;
@@ -505,6 +566,7 @@
     position: relative;
     z-index: 2;
   }
+
   .substack-card {
     background: var(--cream-deep);
     border: 1px solid rgba(34,30,24,0.12);
@@ -517,14 +579,17 @@
     position: relative;
     overflow: hidden;
   }
+
   .substack-card::before {
     content: "✺";
     position: absolute;
-    top: 32px; right: 36px;
+    top: 32px;
+    right: 36px;
     font-size: 32px;
     color: var(--ochre);
     opacity: 0.45;
   }
+
   .substack-card h3 {
     font-family: 'Fraunces', serif;
     font-weight: 360;
@@ -535,13 +600,16 @@
     margin-bottom: 16px;
     font-variation-settings: "SOFT" 90, "opsz" 144;
   }
+
   .substack-card h3 em { font-style: italic; color: var(--ochre); }
+
   .substack-card p {
     font-size: 18px;
     line-height: 1.6;
     color: var(--ink-soft);
     margin-bottom: 28px;
   }
+
   .substack-meta {
     display: flex;
     gap: 24px;
@@ -551,7 +619,9 @@
     font-style: italic;
     font-size: 14px;
     color: var(--ink-soft);
+    flex-wrap: wrap;
   }
+
   .substack-meta .pill {
     background: var(--cream);
     padding: 6px 14px;
@@ -563,11 +633,13 @@
     color: var(--sage-deep);
     border: 1px solid rgba(34,30,24,0.12);
   }
+
   .substack-posts {
     display: flex;
     flex-direction: column;
     gap: 18px;
   }
+
   .post {
     padding: 18px 0;
     border-bottom: 1px solid rgba(34,30,24,0.12);
@@ -576,7 +648,9 @@
     display: block;
     transition: padding 0.2s;
   }
+
   .post:hover { padding-left: 8px; }
+
   .post .date {
     font-family: 'Fraunces', serif;
     font-style: italic;
@@ -584,6 +658,7 @@
     color: var(--ochre);
     margin-bottom: 4px;
   }
+
   .post .title {
     font-family: 'Fraunces', serif;
     font-size: 19px;
@@ -605,12 +680,12 @@
     border-radius: 999px;
     transition: all 0.2s;
   }
+
   .btn-secondary:hover {
     background: var(--sage-deep);
     color: var(--cream);
   }
 
-  /* ---------- FINAL CTA ---------- */
   .final-cta {
     padding: 160px 48px;
     text-align: center;
@@ -619,23 +694,38 @@
     z-index: 2;
     overflow: hidden;
   }
-  .final-cta::before, .final-cta::after {
+
+  .final-cta::before,
+  .final-cta::after {
     content: "";
     position: absolute;
-    width: 360px; height: 360px;
+    width: 360px;
+    height: 360px;
     border-radius: 50%;
     pointer-events: none;
   }
+
   .final-cta::before {
-    top: -120px; left: -120px;
+    top: -120px;
+    left: -120px;
     background: radial-gradient(circle, rgba(201,160,74,0.12), transparent 70%);
   }
+
   .final-cta::after {
-    bottom: -120px; right: -120px;
+    bottom: -120px;
+    right: -120px;
     background: radial-gradient(circle, rgba(45,61,51,0.08), transparent 70%);
   }
-  .final-cta-inner { position: relative; z-index: 2; max-width: 800px; margin: 0 auto; }
+
+  .final-cta-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
   .final-cta .section-label { display: inline-block; }
+
   .final-cta h2 {
     font-family: 'Fraunces', serif;
     font-weight: 340;
@@ -646,13 +736,16 @@
     margin-bottom: 28px;
     font-variation-settings: "SOFT" 100, "opsz" 144;
   }
+
   .final-cta h2 em { font-style: italic; color: var(--ochre); }
+
   .final-cta p {
     font-size: 20px;
     line-height: 1.55;
     color: var(--ink-soft);
     margin-bottom: 14px;
   }
+
   .final-cta .fit-note {
     font-family: 'Fraunces', serif;
     font-style: italic;
@@ -663,7 +756,6 @@
     opacity: 0.85;
   }
 
-  /* ---------- FOOTER ---------- */
   footer {
     padding: 56px 48px 40px;
     background: var(--sage-deep);
@@ -671,6 +763,7 @@
     position: relative;
     z-index: 2;
   }
+
   .footer-inner {
     max-width: 1280px;
     margin: 0 auto;
@@ -680,19 +773,29 @@
     flex-wrap: wrap;
     gap: 24px;
   }
+
   footer .brand {
     font-family: 'Fraunces', serif;
     font-size: 18px;
     color: var(--cream);
   }
+
   footer .brand em { font-style: italic; color: var(--ochre); }
-  footer .links { display: flex; gap: 28px; font-size: 14px; }
+
+  footer .links {
+    display: flex;
+    gap: 28px;
+    font-size: 14px;
+  }
+
   footer .links a {
     color: rgba(242,235,221,0.7);
     text-decoration: none;
     transition: color 0.2s;
   }
+
   footer .links a:hover { color: var(--ochre); }
+
   footer .copyright {
     margin-top: 32px;
     padding-top: 24px;
@@ -705,11 +808,11 @@
     margin-right: auto;
   }
 
-  /* ---------- ENTRANCE ANIMATION ---------- */
   @keyframes rise {
     from { opacity: 0; transform: translateY(24px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
   .hero .eyebrow { animation: rise 0.8s 0.1s both; }
   .hero h1 { animation: rise 0.9s 0.25s both; }
   .hero .promise { animation: rise 0.9s 0.4s both; }
@@ -717,7 +820,6 @@
   .hero .btn-primary { animation: rise 0.9s 0.7s both; }
   .hero-portrait { animation: rise 1s 0.4s both; }
 
-  /* ---------- RESPONSIVE ---------- */
   @media (max-width: 900px) {
     nav { padding: 18px 22px; }
     nav .links { gap: 18px; font-size: 12px; }
@@ -729,8 +831,11 @@
     }
     .strip { padding: 24px 22px; gap: 18px; font-size: 12px; }
     .strip .dot { display: none; }
-    .about, .path, .substack { padding: 90px 22px; }
-    .about, .substack-card { grid-template-columns: 1fr; gap: 44px; }
+    .about,
+    .path,
+    .substack { padding: 90px 22px; }
+    .about,
+    .substack-card { grid-template-columns: 1fr; gap: 44px; }
     .substack-card { padding: 40px 28px; }
     .diagnosis { padding: 90px 22px; }
     .truths { grid-template-columns: 1fr; }
@@ -751,11 +856,10 @@
     <a href="#about">About</a>
     <a href="#path">The Path</a>
     <a href="#substack">Substack</a>
-    <a href="https://tinyurl.com/yjm3dtz7" class="cta-link">Explore Working Together</a>
+    <a href="https://tinyurl.com/yjm3dtz7" class="cta-link" target="_blank" rel="noopener noreferrer">Explore Working Together</a>
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-text">
     <div class="eyebrow">Made for More</div>
@@ -770,17 +874,17 @@
       You've already proven you can produce. The question isn't whether you can sell more houses.
       It's whether the version of this business you're building is the one you actually want.
     </p>
-    <a href="https://tinyurl.com/yjm3dtz7" class="btn-primary">
+    <a href="https://tinyurl.com/yjm3dtz7" class="btn-primary" target="_blank" rel="noopener noreferrer">
       Explore Working Together
       <span class="arrow">→</span>
     </a>
   </div>
   <div class="hero-portrait">
+    <img src="jeremy-larkin.jpeg" alt="Jeremy Larkin portrait" loading="eager">
     <div class="badge">St. George, UT · 21 yrs in</div>
   </div>
 </section>
 
-<!-- CREDIBILITY STRIP -->
 <div class="strip">
   <span><span class="num">21</span> Years in the Business</span>
   <span class="dot"></span>
@@ -791,7 +895,6 @@
   <span>Founder · The Larkin Group</span>
 </div>
 
-<!-- DIAGNOSIS -->
 <section class="diagnosis" id="diagnosis">
   <div class="diagnosis-inner">
     <div class="section-label">— The Diagnosis</div>
@@ -862,7 +965,6 @@
   </div>
 </section>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-meta">
     <div class="section-label">— About</div>
@@ -911,7 +1013,6 @@
   </div>
 </section>
 
-<!-- THE PATH -->
 <section class="path" id="path">
   <div class="path-header">
     <div class="section-label">— The Path</div>
@@ -956,7 +1057,6 @@
   </div>
 </section>
 
-<!-- SUBSTACK -->
 <section class="substack" id="substack">
   <div class="substack-card">
     <div>
@@ -967,32 +1067,31 @@
         the actual mechanics of building a business that funds a life. No hype. No gurus.
         Just what's working — and what's breaking — for real producers, written from St. George.
       </p>
-      <a href="https://highimpactrealtor.substack.com" class="btn-secondary">
+      <a href="https://jeremylarkin.substack.com/" class="btn-secondary" target="_blank" rel="noopener noreferrer">
         Read on Substack →
       </a>
       <div class="substack-meta">
         <span class="pill">Weekly</span>
-        <span>Free to read · No spam, ever</span>
+        <span>Free to read · Subscribe on Substack</span>
       </div>
     </div>
     <div class="substack-posts">
-      <a href="https://highimpactrealtor.substack.com" class="post">
-        <div class="date">Latest</div>
-        <div class="title">[ Pulls latest post title via Substack ]</div>
+      <a href="https://jeremylarkin.substack.com/p/the-ugliest-sign-in-real-estate-just" class="post" target="_blank" rel="noopener noreferrer">
+        <div class="date">Apr 27, 2026</div>
+        <div class="title">The ugliest sign in Real Estate just sold for $880 million...</div>
       </a>
-      <a href="https://highimpactrealtor.substack.com" class="post">
-        <div class="date">Last week</div>
-        <div class="title">[ Pulls previous post title ]</div>
+      <a href="https://jeremylarkin.substack.com/p/i-almost-chose-powder-day-over-the" class="post" target="_blank" rel="noopener noreferrer">
+        <div class="date">Apr 27, 2026</div>
+        <div class="title">I almost chose powder day over the family...</div>
       </a>
-      <a href="https://highimpactrealtor.substack.com" class="post">
-        <div class="date">Two weeks ago</div>
-        <div class="title">[ Pulls previous post title ]</div>
+      <a href="https://jeremylarkin.substack.com/p/what-the-worlds-largest-cruise-ship" class="post" target="_blank" rel="noopener noreferrer">
+        <div class="date">Mar 28, 2026</div>
+        <div class="title">What The World's Largest Cruise Ship Taught Me About The Real Estate Income Rollercoaster</div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- FINAL CTA -->
 <section class="final-cta">
   <div class="final-cta-inner">
     <div class="section-label">— What's Next</div>
@@ -1001,7 +1100,7 @@
       A 30-minute conversation. No pitch deck, no pressure. We figure out together
       whether the work I do is the right fit — and if it isn't, I'll tell you what is.
     </p>
-    <a href="https://tinyurl.com/yjm3dtz7" class="btn-primary">
+    <a href="https://tinyurl.com/yjm3dtz7" class="btn-primary" target="_blank" rel="noopener noreferrer">
       Explore Working Together
       <span class="arrow">→</span>
     </a>
@@ -1020,7 +1119,7 @@
       <a href="#about">About</a>
       <a href="#path">The Path</a>
       <a href="#substack">Substack</a>
-      <a href="https://tinyurl.com/yjm3dtz7">Book a Call</a>
+      <a href="https://tinyurl.com/yjm3dtz7" target="_blank" rel="noopener noreferrer">Book a Call</a>
     </div>
   </div>
   <div class="copyright">© 2026 The Larkin Group · St. George, Utah · Made for More</div>
